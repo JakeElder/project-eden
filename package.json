@@ -1,5 +1,11 @@
 {
   "name": "root",
+  "scripts": {
+    "graduate": "npx lerna version --conventional-graduate"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
   "private": true,
   "devDependencies": {
     "lerna": "^3.22.1"

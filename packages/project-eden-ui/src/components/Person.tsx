@@ -1,6 +1,7 @@
 import React from "react";
+import { Person as PersonType } from "@mindfulstudio/project-eden-types";
 
-export type Props = { name: string };
+export type Props = PersonType & {};
 
 function Person({ name }: Props) {
   return <span>{name}</span>;

@@ -1,24 +1,19 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "ESNext"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "ESNext",
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "baseUrl": ".",
-    "paths": {
-      "@mindfulstudio/project-eden-types": ["../project-eden-types/types"]
-    },
-    "rootDirs": ["src", "stories"]
+    "jsx": "preserve"
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["types/*.ts"]
 }

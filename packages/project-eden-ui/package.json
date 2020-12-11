@@ -1,11 +1,17 @@
 {
-  "name": "project-eden-ui",
+  "name": "@mindfulstudio/project-eden-ui",
   "version": "0.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "develop": "start-storybook -p 5010",
     "build": "build-storybook"
   },
+  "publishConfig": {
+    "access": "public",
+    "directory": "src"
+  },
   "dependencies": {
+    "@mindfulstudio/project-eden-types": "0.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

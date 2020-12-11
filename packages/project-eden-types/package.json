@@ -1,0 +1,22 @@
+{
+  "name": "@mindfulstudio/project-eden-types",
+  "version": "0.0.0",
+  "description": "Project Eden Typescript types",
+  "license": "UNLICENSED",
+  "scripts": {
+    "format": "prettier . --write",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "cp package.json types/"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "types"
+  },
+  "dependencies": {
+    "superstruct": "^0.12.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.2"
+  }
+}
