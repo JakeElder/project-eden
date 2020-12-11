@@ -12,6 +12,7 @@
     "directory": "src"
   },
   "dependencies": {
+    "@mindfulstudio/project-eden-tsconfig": "0.0.0",
     "@mindfulstudio/project-eden-types": "0.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
