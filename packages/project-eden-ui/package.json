@@ -4,7 +4,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "develop": "start-storybook -p 5010",
-    "build": "build-storybook"
+    "build": "build-storybook",
+    "typecheck": "tsc --noEmit"
   },
   "publishConfig": {
     "access": "public",
