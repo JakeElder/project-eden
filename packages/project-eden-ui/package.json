@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "UNLICENSED",
   "scripts": {
-    "develop": "start-storybook -p --ci 5010",
+    "develop": "start-storybook --ci -p 5010",
     "build": "build-storybook",
     "typecheck": "tsc --noEmit"
   },
@@ -12,13 +12,17 @@
     "directory": "src"
   },
   "dependencies": {
+    "@emotion/react": "^11.1.2",
+    "@emotion/styled": "^11.0.0",
     "@mindfulstudio/project-eden-tsconfig": "0.0.0",
     "@mindfulstudio/project-eden-types": "0.0.0",
+    "@styled-system/css": "^5.1.5",
     "react": "17.0.1",
     "react-dom": "17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@emotion/babel-preset-css-prop": "^11.0.0",
     "@storybook/addon-actions": "^6.1.10",
     "@storybook/addon-essentials": "^6.1.10",
     "@storybook/addon-links": "^6.1.10",
