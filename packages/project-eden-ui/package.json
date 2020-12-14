@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "UNLICENSED",
   "scripts": {
-    "develop": "start-storybook -p 5010",
+    "develop": "start-storybook -p --ci 5010",
     "build": "build-storybook",
     "typecheck": "tsc --noEmit"
   },
@@ -14,8 +14,8 @@
   "dependencies": {
     "@mindfulstudio/project-eden-tsconfig": "0.0.0",
     "@mindfulstudio/project-eden-types": "0.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

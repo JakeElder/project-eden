@@ -1,12 +1,17 @@
 {
   "name": "root",
   "scripts": {
-    "start": "for p in . packages/project-eden-types packages/project-eden-cms packages/project-eden-ui; do $(cd $p && tmuxinator); done",
+    "start": "for p in . packages/project-eden-types packages/project-eden-cms packages/project-eden-ui packages/project-eden-app; do $(cd $p && tmuxinator); done",
     "graduate": "npx lerna version --conventional-graduate"
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**"
+    ]
+  },
   "private": true,
   "devDependencies": {
     "lerna": "^3.22.1"
