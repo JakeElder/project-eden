@@ -8,9 +8,11 @@
     "packages": [
       "packages/*"
     ],
-    "nohoist": [
-      "**"
-    ]
+    "nohoist": []
+  },
+  "resolutions": {
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   },
   "private": true,
   "devDependencies": {

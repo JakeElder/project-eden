@@ -1,18 +1,18 @@
 import React from "react";
 import { Person as PersonType } from "@mindfulstudio/project-eden-types";
-import { css } from "@styled-system/css";
+import styled from "@emotion/styled";
+import css from "@styled-system/css";
+
+const T = styled.div(css({ color: "link.0" }));
 
 export type Props = PersonType & {};
 
 function Person({ name }: Props) {
   return (
-    <span
-      css={css({
-        color: "link.0",
-      })}
-    >
-      {name}
-    </span>
+    <>
+      <span css={css({ color: "link.0" })}>{name}</span>
+      <T>Styled Component</T>
+    </>
   );
 }
 

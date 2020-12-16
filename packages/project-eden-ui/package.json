@@ -2,14 +2,11 @@
   "name": "@mindfulstudio/project-eden-ui",
   "version": "0.0.0",
   "license": "UNLICENSED",
+  "main": "src/index",
   "scripts": {
     "develop": "start-storybook --ci -p 5010",
     "build": "build-storybook",
     "typecheck": "tsc --noEmit"
-  },
-  "publishConfig": {
-    "access": "public",
-    "directory": "src"
   },
   "dependencies": {
     "@emotion/react": "^11.1.2",
@@ -22,12 +19,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
     "@emotion/babel-preset-css-prop": "^11.0.0",
     "@storybook/addon-actions": "^6.1.10",
     "@storybook/addon-essentials": "^6.1.10",
     "@storybook/addon-links": "^6.1.10",
     "@storybook/react": "^6.1.10",
     "@types/react": "^17.0.0",
+    "@types/styled-system__css": "^5.0.14",
     "babel-loader": "^8.2.2",
     "typescript": "^4.1.2"
   }
