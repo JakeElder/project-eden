@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+declare -a arr=(. packages/*)
+
+for i in "${arr[@]}"
+do
+  if test -f "$i/.tmuxinator.yml"; then
+    echo "Loading $i/.tmuxinator.yml"
+    tmuxinator start -p "$i/.tmuxinator.yml"
+  fi
+done
