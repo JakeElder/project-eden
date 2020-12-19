@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Person } from "@mindfulstudio/project-eden-ui";
+import { Person, Heading } from "@mindfulstudio/project-eden-ui";
 import type { Person as PersonType } from "@mindfulstudio/project-eden-types";
 import { gql, useQuery } from "@apollo/client";
 
@@ -34,6 +34,7 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Heading>Heading</Heading>
       <Person name={users[0].username} />
     </div>
   );
