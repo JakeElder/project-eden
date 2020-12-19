@@ -63,10 +63,10 @@ jobs:
         run: git log
       - name: Push to Heroku
         run: |
-          git remote add heroku git@heroku.com:tenjin-cms-stage.git
+          git remote add heroku git@heroku.com:project-eden-cms-stage.git
           subtree=`
             git subtree split \
-              --prefix packages/tenjin-cms \
+              --prefix packages/project-eden-cms \
               HEAD
           `
           git push --force heroku ${subtree}:refs/heads/master
@@ -101,7 +101,7 @@ jobs:
       - name: Build
         run: |
           npx lerna run build \
-            --scope @mindfulstudio/tenjin-ui \
+            --scope @mindfulstudio/project-eden-ui \
             --stream
       - name: Deploy
         env:
@@ -110,7 +110,7 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
           npx lerna run deploy \
-            --scope @mindfulstudio/tenjin-ui \
+            --scope @mindfulstudio/project-eden-ui \
             --stream
 
   deploy_next_js_app:
@@ -135,5 +135,5 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         run: |
           npx lerna run deploy \
-            --scope @mindfulstudio/tenjin-app \
+            --scope @mindfulstudio/project-eden-app \
             --stream
