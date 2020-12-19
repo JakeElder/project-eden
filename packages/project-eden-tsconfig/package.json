@@ -1,6 +1,6 @@
 {
   "name": "@mindfulstudio/project-eden-tsconfig",
-  "version": "0.0.0",
+  "version": "0.1.0-beta.13",
   "description": "TS config for Project Eden",
   "main": "tsconfig.json",
   "files": [

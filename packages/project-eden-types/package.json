@@ -1,6 +1,6 @@
 {
   "name": "@mindfulstudio/project-eden-types",
-  "version": "0.0.0",
+  "version": "0.1.0-beta.13",
   "description": "Project Eden Typescript types",
   "license": "UNLICENSED",
   "main": "types/index",
@@ -10,11 +10,10 @@
     "prepublishOnly": "cp package.json types/"
   },
   "publishConfig": {
-    "access": "public",
-    "directory": "types"
+    "access": "public"
   },
   "dependencies": {
-    "@mindfulstudio/project-eden-tsconfig": "0.0.0",
+    "@mindfulstudio/project-eden-tsconfig": "0.1.0-beta.13",
     "superstruct": "^0.12.1"
   },
   "devDependencies": {
