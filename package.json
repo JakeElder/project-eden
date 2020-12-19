@@ -1,7 +1,6 @@
 {
   "name": "root",
   "scripts": {
-    "start": "for p in . packages/project-eden-types packages/project-eden-cms packages/project-eden-ui packages/project-eden-app; do $(cd $p && tmuxinator); done",
     "graduate": "npx lerna version --conventional-graduate"
   },
   "workspaces": {
