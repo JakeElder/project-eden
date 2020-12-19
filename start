@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-declare -a packages=(. packages/*)
+packages=(
+  .
+  packages/project-eden-types
+  packages/project-eden-cms
+  packages/project-eden-ui
+  packages/project-eden-app
+)
 
 for i in "${packages[@]}"
 do
