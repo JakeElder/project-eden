@@ -1,7 +1,7 @@
 import React from "react";
 import css from "@styled-system/css";
 
-type Props = { children: string };
+export type Props = { children: string };
 
 function Heading({ children }: Props) {
   return (
