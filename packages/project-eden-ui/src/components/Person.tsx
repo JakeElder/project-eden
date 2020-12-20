@@ -5,7 +5,7 @@ import css from "@styled-system/css";
 
 const T = styled.div(css({ color: "link.0" }));
 
-export type Props = PersonType & {};
+export type Props = Omit<PersonType, "username"> & {};
 
 function Person({ name }: Props) {
   return (
