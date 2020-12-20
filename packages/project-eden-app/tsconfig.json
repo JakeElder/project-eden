@@ -1,7 +1,7 @@
 {
   "extends": "@mindfulstudio/project-eden-tsconfig",
   "compilerOptions": {
-    "types": ["@emotion/core"]
+    "jsxImportSource": "@emotion/react"
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
