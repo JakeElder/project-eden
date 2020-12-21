@@ -1,0 +1,74 @@
+import React, { useEffect, useRef, useState } from "react";
+import Hls from "hls.js";
+
+export type Props = { src: string; verticalOverflow: number };
+
+function isHTMLVideoElement(
+  obj: null | HTMLVideoElement
+): obj is HTMLVideoElement {
+  return typeof obj !== null;
+}
+
+function TakeoverVideo({ src }: Props) {
+  const [loaded, setLoaded] = useState<boolean>(false);
+  const [playing, setPlaying] = useState<boolean>(false);
+  const [time, setTime] = useState<number>(0);
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const durationRef = useRef<number>(0);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (!isHTMLVideoElement(video)) {
+      return;
+    }
+
+    if (Hls.isSupported()) {
+      var hls = new Hls();
+      // hls.on(Hls.Events.LEVEL_SWITCHED, (...args) => console.log(...args));
+      hls.loadSource(src);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, (_, data) => {
+        video.addEventListener("loadedmetadata", () => {
+          durationRef.current = video.duration;
+          setLoaded(true);
+          video.play();
+        });
+      });
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      video.src = src;
+      video.addEventListener("loadedmetadata", () => {
+        setLoaded(true);
+        video.play();
+      });
+    }
+  }, []);
+
+  return (
+    <video
+      onPlay={() => setPlaying(true)}
+      onPause={() => setPlaying(false)}
+      onTimeUpdate={() => {
+        setTime(videoRef.current?.currentTime as number);
+      }}
+      css={{
+        display: "block",
+        objectFit: "cover",
+        width: "100vw",
+        height: "calc(100vh + 50px)",
+        "&:focus": {
+          outline: "none",
+        },
+      }}
+      muted
+      loop
+      poster={require("../../public/Background.00_00_00_00.Still001.webp")}
+      ref={videoRef}
+    />
+  );
+}
+
+TakeoverVideo.defaultProps = { verticalOverflow: 0 } as Partial<Props>;
+
+export default TakeoverVideo;
