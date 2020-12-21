@@ -1,7 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import Hls from "hls.js";
 
-export type Props = { src: string; verticalOverflow: number };
+export type Props = {
+  src: string;
+  poster?: string;
+  verticalOverflow?: number;
+};
 
 function isHTMLVideoElement(
   obj: null | HTMLVideoElement
@@ -9,7 +13,7 @@ function isHTMLVideoElement(
   return typeof obj !== null;
 }
 
-function TakeoverVideo({ src }: Props) {
+function TakeoverVideo({ src, poster, verticalOverflow = 0 }: Props) {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [playing, setPlaying] = useState<boolean>(false);
   const [time, setTime] = useState<number>(0);
@@ -56,19 +60,17 @@ function TakeoverVideo({ src }: Props) {
         display: "block",
         objectFit: "cover",
         width: "100vw",
-        height: "calc(100vh + 50px)",
+        height: `calc(100vh + ${verticalOverflow}px)`,
         "&:focus": {
           outline: "none",
         },
       }}
       muted
       loop
-      poster={require("../../public/Background.00_00_00_00.Still001.webp")}
+      poster={poster}
       ref={videoRef}
     />
   );
 }
-
-TakeoverVideo.defaultProps = { verticalOverflow: 0 } as Partial<Props>;
 
 export default TakeoverVideo;
