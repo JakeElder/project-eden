@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { TakeoverVideo } from "@mindfulstudio/project-eden-ui";
+import { VideoTakeoverHeader } from "@mindfulstudio/project-eden-ui";
 
 export default function Home() {
   return (
@@ -8,9 +8,10 @@ export default function Home() {
         <title>Project Eden | Be at home. Anywhere</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <TakeoverVideo
+      <VideoTakeoverHeader
         src="https://player.vimeo.com/external/493189525.m3u8?s=b0d350d87e15e002cc3ea2556bfee0adfa75f770"
         poster="/Background.00_00_00_00.Still001.webp"
+        verticalOverflow={100}
       />
     </div>
   );
