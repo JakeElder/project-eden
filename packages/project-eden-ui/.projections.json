@@ -3,8 +3,12 @@
     "alternate": "stories/{}.stories.tsx",
     "type": "component"
   },
+  "src/layouts/*.tsx": {
+    "alternate": "stories/{}.stories.tsx",
+    "type": "layout"
+  },
   "stories/*.stories.tsx": {
-    "alternate": "src/components/{}.tsx",
+    "alternate": ["src/components/{}.tsx", "src/layouts/{}.tsx"],
     "type": "story"
   }
 }
