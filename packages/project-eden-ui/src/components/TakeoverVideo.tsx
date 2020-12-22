@@ -56,7 +56,7 @@ function TakeoverVideo({ src, poster, verticalOverflow = 0, children }: Props) {
         css={{
           position: "absolute",
           width: "100%",
-          height: "100vh",
+          height: `calc(100vh + ${verticalOverflow}px)`,
           overflow: "hidden",
         }}
       >
