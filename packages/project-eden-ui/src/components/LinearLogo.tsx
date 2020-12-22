@@ -1,13 +1,14 @@
 import React from "react";
 
-export type Props = { width?: number };
+export type Props = { width?: number; className?: string };
 
-function LinearLogo({ width = 300 }: Props) {
+function LinearLogo({ width = 300, className }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1749.41 293.72"
       width={width}
+      className={className}
     >
       <defs>
         <style>{".prefix__cls-1{fill:#fff}.prefix__cls-4{fill:#fdfdfd}"}</style>

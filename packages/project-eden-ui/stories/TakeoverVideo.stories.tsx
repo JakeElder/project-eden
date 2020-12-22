@@ -3,6 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import TakeoverVideo, {
   Props as TakeoverVideoProps,
 } from "../src/components/TakeoverVideo";
+import LinearLogo from "../src/components/LinearLogo";
 import poster from "../public/Background.00_00_00_00.Still001.webp";
 
 export default {
@@ -21,11 +22,20 @@ export const Default: Story<TakeoverVideoProps> = (args) => (
 );
 
 export const WithContentBeneath: Story<TakeoverVideoProps> = (args) => (
-  <div>
+  <>
     <TakeoverVideo {...args} />
-    <div css={{ height: 100, backgroundColor: "SkyBlue" }}></div>
-  </div>
+    <div css={{ height: 100, backgroundColor: "skyblue" }}></div>
+  </>
 );
 WithContentBeneath.args = {
   verticalOverflow: 100,
 };
+
+export const WithContentOverlayed: Story<TakeoverVideoProps> = (args) => (
+  <TakeoverVideo {...args}>
+    <div css={{ padding: 40 }}>
+      <LinearLogo width={400} css={{ marginBottom: 40 }} />
+      <div css={{ height: "100vh", width: 3, background: "skyblue" }}></div>
+    </div>
+  </TakeoverVideo>
+);

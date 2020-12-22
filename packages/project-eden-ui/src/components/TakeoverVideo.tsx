@@ -5,6 +5,7 @@ export type Props = {
   src: string;
   poster?: string;
   verticalOverflow?: number;
+  children?: React.ReactNode;
 };
 
 function isHTMLVideoElement(
@@ -13,7 +14,7 @@ function isHTMLVideoElement(
   return typeof obj !== null;
 }
 
-function TakeoverVideo({ src, poster, verticalOverflow = 0 }: Props) {
+function TakeoverVideo({ src, poster, verticalOverflow = 0, children }: Props) {
   const [loaded, setLoaded] = useState<boolean>(false);
   const [playing, setPlaying] = useState<boolean>(false);
   const [time, setTime] = useState<number>(0);
@@ -50,26 +51,38 @@ function TakeoverVideo({ src, poster, verticalOverflow = 0 }: Props) {
   }, []);
 
   return (
-    <video
-      onPlay={() => setPlaying(true)}
-      onPause={() => setPlaying(false)}
-      onTimeUpdate={() => {
-        setTime(videoRef.current?.currentTime as number);
-      }}
-      css={{
-        display: "block",
-        objectFit: "cover",
-        width: "100vw",
-        height: `calc(100vh + ${verticalOverflow}px)`,
-        "&:focus": {
-          outline: "none",
-        },
-      }}
-      muted
-      loop
-      poster={poster}
-      ref={videoRef}
-    />
+    <div css={{ position: "relative" }}>
+      <div
+        css={{
+          position: "absolute",
+          width: "100%",
+          height: "100vh",
+          overflow: "hidden",
+        }}
+      >
+        {children}
+      </div>
+      <video
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onTimeUpdate={() => {
+          setTime(videoRef.current?.currentTime as number);
+        }}
+        css={{
+          display: "block",
+          objectFit: "cover",
+          width: "100vw",
+          height: `calc(100vh + ${verticalOverflow}px)`,
+          "&:focus": {
+            outline: "none",
+          },
+        }}
+        muted
+        loop
+        poster={poster}
+        ref={videoRef}
+      />
+    </div>
   );
 }
 
