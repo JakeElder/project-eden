@@ -7,7 +7,8 @@ function Theme({ children }: React.PropsWithChildren<{}>) {
     <ThemeProvider theme={theme}>
       <Global
         styles={css`
-          svg {
+          svg,
+          img {
             vertical-align: top;
           }
         `}
