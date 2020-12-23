@@ -7,6 +7,10 @@
     "alternate": "stories/{}.stories.tsx",
     "type": "layout"
   },
+  "src/pages/*.tsx": {
+    "alternate": "stories/{}.stories.tsx",
+    "type": "page"
+  },
   "stories/*.stories.tsx": {
     "alternate": ["src/components/{}.tsx", "src/layouts/{}.tsx"],
     "type": "story"

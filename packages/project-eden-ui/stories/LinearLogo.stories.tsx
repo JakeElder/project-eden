@@ -1,7 +1,8 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import LinearLogo from "../src/components/LinearLogo";
-import type { Props as LinearLogoProps } from "../src/components/LinearLogo";
+import LinearLogo, {
+  Props as LinearLogoProps,
+} from "../src/components/LinearLogo";
 
 export default {
   title: "Components / Linear Logo",

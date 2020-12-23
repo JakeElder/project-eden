@@ -1,8 +1,7 @@
 import React from "react";
-import TakeoverVideo from "../components/TakeoverVideo";
-import LinearLogo from "../components/LinearLogo";
-
-import type { Props as TakeoverVideoProps } from "../components/TakeoverVideo";
+import TakeoverVideo, {
+  Props as TakeoverVideoProps,
+} from "../components/TakeoverVideo";
 
 export type Props = TakeoverVideoProps & {
   transition?: React.FunctionComponent<{}>;
@@ -13,6 +12,7 @@ function VideoTakeoverHeader({
   poster,
   verticalOverflow,
   transition: Transition = () => null,
+  children,
 }: Props) {
   return (
     <>
@@ -21,9 +21,7 @@ function VideoTakeoverHeader({
         poster={poster}
         verticalOverflow={verticalOverflow}
       >
-        <div css={{ padding: 40 }}>
-          <LinearLogo width={400} />
-        </div>
+        {children}
       </TakeoverVideo>
       <Transition />
     </>

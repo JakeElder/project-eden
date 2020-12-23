@@ -1,10 +1,12 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import VideoTakeoverHeader from "../src/layouts/VideoTakeoverHeader";
-import poster from "../public/Background.00_00_00_00.Still001.webp";
+import VideoTakeoverHeader, {
+  Props as VideoTakeoverHeaderProps,
+} from "../src/layouts/VideoTakeoverHeader";
 import LandscapeTransition from "../src/components/LandscapeTransition";
-import type { Props as VideoTakeoverHeaderProps } from "../src/layouts/VideoTakeoverHeader";
+import LinearLogo from "../src/components/LinearLogo";
 import landscapeImage from "../public/repeating-landscape.svg";
+import poster from "../public/Background.00_00_00_00.Still001.webp";
 
 export default {
   title: "Layouts / VideoTakeoverHeader",
@@ -19,13 +21,17 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<VideoTakeoverHeaderProps> = (args) => (
-  <VideoTakeoverHeader {...args} />
+const Template: Story<VideoTakeoverHeaderProps> = (args) => (
+  <VideoTakeoverHeader {...args}>
+    <div css={{ padding: 40 }}>
+      <LinearLogo css={{ maxWidth: "70vw" }} width={400} />
+    </div>
+  </VideoTakeoverHeader>
 );
 
-export const WithTransition: Story<VideoTakeoverHeaderProps> = (args) => (
-  <VideoTakeoverHeader {...args} />
-);
+export const Default = Template.bind({});
+
+export const WithTransition = Template.bind({});
 WithTransition.args = {
   verticalOverflow: 63,
   transition: () => <LandscapeTransition landscapeSrc={landscapeImage} />,
