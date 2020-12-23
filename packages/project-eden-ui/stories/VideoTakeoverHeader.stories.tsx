@@ -2,8 +2,9 @@ import React from "react";
 import { Story, Meta } from "@storybook/react";
 import VideoTakeoverHeader from "../src/layouts/VideoTakeoverHeader";
 import poster from "../public/Background.00_00_00_00.Still001.webp";
-
+import LandscapeTransition from "../src/components/LandscapeTransition";
 import type { Props as VideoTakeoverHeaderProps } from "../src/layouts/VideoTakeoverHeader";
+import landscapeImage from "../public/repeating-landscape.svg";
 
 export default {
   title: "Layouts / VideoTakeoverHeader",
@@ -21,3 +22,11 @@ export default {
 export const Default: Story<VideoTakeoverHeaderProps> = (args) => (
   <VideoTakeoverHeader {...args} />
 );
+
+export const WithTransition: Story<VideoTakeoverHeaderProps> = (args) => (
+  <VideoTakeoverHeader {...args} />
+);
+WithTransition.args = {
+  verticalOverflow: 63,
+  transition: () => <LandscapeTransition landscapeSrc={landscapeImage} />,
+};
