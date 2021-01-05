@@ -5,7 +5,7 @@ import VideoTakeoverHeader, {
 } from "../src/layouts/VideoTakeoverHeader";
 import LandscapeTransition from "../src/components/LandscapeTransition";
 import LinearLogo from "../src/components/LinearLogo";
-import landscapeImage from "../public/repeating-landscape.svg";
+import landscapeImage from "../public/repeating-landscape.webp";
 import poster from "../public/Background.00_00_00_00.Still001.webp";
 
 export default {

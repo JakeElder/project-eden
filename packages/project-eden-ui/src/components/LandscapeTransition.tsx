@@ -8,8 +8,8 @@ function LandscapeTransition({ landscapeSrc }: Props) {
     <CutoutTransition
       src={landscapeSrc}
       height={100}
-      imageOffset={-320}
-      overlap={63}
+      overlap={65}
+      imageOffset={-80}
     />
   );
 }

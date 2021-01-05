@@ -12,7 +12,9 @@ export default function Home() {
       <IndexPage
         videoSrc="https://player.vimeo.com/external/493189525.m3u8?s=b0d350d87e15e002cc3ea2556bfee0adfa75f770"
         poster="/Background.00_00_00_00.Still001.webp"
-        transition={() => <LandscapeTransition landscapeSrc="/landscape.svg" />}
+        transition={() => (
+          <LandscapeTransition landscapeSrc="/repeating-landscape.webp" />
+        )}
       />
     </div>
   );

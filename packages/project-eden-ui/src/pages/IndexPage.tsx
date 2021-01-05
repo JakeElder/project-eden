@@ -13,7 +13,7 @@ function IndexPage({ videoSrc, poster, transition: Transition }: Props) {
   return (
     <div css={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <VideoTakeoverHeader
-        verticalOverflow={-80}
+        verticalOverflow={-60}
         src={videoSrc}
         poster={poster}
       >

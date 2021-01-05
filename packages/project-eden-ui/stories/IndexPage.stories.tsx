@@ -2,7 +2,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react";
 import IndexPage, { Props as IndexPageProps } from "../src/pages/IndexPage";
 import LandscapeTransition from "../src/components/LandscapeTransition";
-import landscapeImage from "../public/repeating-landscape.svg";
+import landscapeImage from "../public/repeating-landscape.webp";
 import poster from "../public/Background.00_00_00_00.Still001.webp";
 
 export default {
