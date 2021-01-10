@@ -3,7 +3,6 @@ import React from "react";
 export type Props = { width?: number; className?: string };
 
 function LeafLogo({ width = 200, className }: Props) {
-  console.log(className);
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
