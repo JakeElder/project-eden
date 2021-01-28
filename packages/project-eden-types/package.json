@@ -1,6 +1,6 @@
 {
   "name": "@mindfulstudio/project-eden-types",
-  "version": "0.1.0",
+  "version": "0.1.1-beta.0",
   "description": "Project Eden Typescript types",
   "license": "UNLICENSED",
   "main": "types/index",
