@@ -1,40 +1,21 @@
+import React from "react";
 import Head from "next/head";
-import { Person } from "@mindfulstudio/project-eden-ui";
-import type { Person as PersonType } from "@mindfulstudio/project-eden-types";
-import { gql, useQuery } from "@apollo/client";
-
-const PEOPLE = gql`
-  query UsersQuery {
-    users(where: { email: "john.doe@example.com" }) {
-      id
-      username
-      email
-    }
-  }
-`;
+import { IndexPage, LandscapeTransition } from "@mindfulstudio/project-eden-ui";
 
 export default function Home() {
-  const { loading, error, data } = useQuery<{ users: PersonType[] }>(PEOPLE);
-
-  if (loading) return <span>Loading...</span>;
-
-  if (error) {
-    return <pre>{JSON.stringify(error, null, 2)}</pre>;
-  }
-
-  if (typeof data === "undefined") {
-    return <span>No data</span>;
-  }
-
-  const { users } = data;
-
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Project Eden | Be at home. Anywhere</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Person name={users[0].username} />
+      <IndexPage
+        videoSrc="https://player.vimeo.com/external/493189525.m3u8?s=b0d350d87e15e002cc3ea2556bfee0adfa75f770"
+        poster="/Background.00_00_00_00.Still001.webp"
+        transition={() => (
+          <LandscapeTransition landscapeSrc="/repeating-landscape.webp" />
+        )}
+      />
     </div>
   );
 }
